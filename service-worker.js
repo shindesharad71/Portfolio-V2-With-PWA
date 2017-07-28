@@ -1,29 +1,3 @@
-/* Previous Service Worker Script
-
-importScripts('/cache-polyfill.js');
-self.addEventListener('install', function(e) {
-    e.waitUntil(
-        caches.open('airhorner').then(function(cache) {
-            return cache.addAll([
-                '/',
-                '/index.html',
-                '/index.html?homescreen=1',
-                '/?homescreen=1',
-                'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css',
-                'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-                '/js/portfolio.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
-            ]);
-        })
-    );
-});
-
-*/
-
-
-
-/* New Service Worker - In service-worker.js */
-
 var cacheName = 'cache-v1'; //Cache Name
 
 //Files to cache
@@ -36,7 +10,8 @@ var filesToCache = [
     'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css',
     'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js',
     '/js/portfolio.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+    'https://cdn.rawgit.com/shindesharad71/PWA-Portfolio/24bde98a/css/style.css'
 ];
 
 //Adding 'install' event listener
